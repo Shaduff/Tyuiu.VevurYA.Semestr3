@@ -129,6 +129,9 @@
   <ItemGroup>
     <ClCompile Include="Tyuiu.VevurYA.Semestr3.Lab3.V14.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MyClass.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

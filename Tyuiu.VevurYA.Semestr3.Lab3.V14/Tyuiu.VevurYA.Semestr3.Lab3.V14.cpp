@@ -1,11 +1,42 @@
 ﻿// Tyuiu.VevurYA.Semestr3.Lab3.V14.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
-
 #include <iostream>
+#include "MyClass.h"
+using namespace std;
+
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	setlocale(0, "");
+	while (true)
+	{
+		system("CLS");
+		double x = 0, y = 0, z = 0;
+		char qst = ' ';
+		my_Fun Fun1;
+		cout << "Какие исходные данные ввести?\n1) Стандартный набор\n2) Пользовательский набор.\nВВОД: "; cin >> qst;
+		if (qst == '1')
+		{
+			x = 2.444;
+			y = 0.869;
+			z = -0.13;
+			cout << "Набор стандартных данных:\nX = " << x << "\nY = " << y << "\nZ = " << z << endl;
+			Fun1.set(x, y, z);
+		}
+		if (qst == '2')
+		{
+			cout << "Введите исходные данные:\n";
+			cout << "X : "; cin >> x;
+			cout << "Y : "; cin >> y;
+			cout << "Z : "; cin >> z;
+			cout << "Набор введенных данных:\nX = " << x << "\nY = " << y << "\nZ = " << z << endl;
+			Fun1.set(x, y, z);
+		}
+		Fun1.run();
+		Fun1.print();
+		system("pause");
+	}
+
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
