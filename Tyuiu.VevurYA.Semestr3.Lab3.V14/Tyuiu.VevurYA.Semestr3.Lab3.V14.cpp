@@ -33,6 +33,7 @@ int main()
 			Fun1.set(x, y, z);
 		}
 		Fun1.run();
+		cout << "Результат h : ";  
 		Fun1.print();
 		system("pause");
 	}
