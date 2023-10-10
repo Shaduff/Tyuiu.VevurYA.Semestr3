@@ -53,7 +53,7 @@ int main()
         int Acount = divby3Count(A, N);
         int Bcount = divby3Count(B, N);
 
-        cout << "A neg. count: " << Acount << endl << "B neg. count: " << Bcount << endl;
+        cout << "A mult. of 3 count: " << Acount << endl << "B mult. of 3 count: " << Bcount << endl;
         if (Acount > Bcount)
         {
             cout << "A : ";  outArray(A, N);
