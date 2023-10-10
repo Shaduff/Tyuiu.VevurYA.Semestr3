@@ -38,7 +38,6 @@ int main()
 		Fun1.print();
 		system("pause");
 	}
-	
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
