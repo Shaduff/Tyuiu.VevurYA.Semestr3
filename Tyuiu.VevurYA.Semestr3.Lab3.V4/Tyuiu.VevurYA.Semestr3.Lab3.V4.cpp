@@ -24,7 +24,7 @@ int main()
 			cout << "Набор стандартных данных:\nX = " << x << "\nY = " << y << "\nZ = " << z << endl;
 			Fun1.set(x, y, z);
 		}
-		if (qst == '2')
+		else if (qst == '2')
 		{
 			cout << "Введите исходные данные:\n";
 			cout << "X : "; cin >> x;
@@ -32,6 +32,13 @@ int main()
 			cout << "Z : "; cin >> z;
 			cout << "Набор введенных данных:\nX = " << x << "\nY = " << y << "\nZ = " << z << endl;
 			Fun1.set(x, y, z);
+		}
+		else
+		{
+			system("CLS");
+			cout << "[ОШИБКА ВВОДА]" << endl;
+			system("pause");
+			continue;
 		}
 		Fun1.run();
 		cout << "Результат w : ";
