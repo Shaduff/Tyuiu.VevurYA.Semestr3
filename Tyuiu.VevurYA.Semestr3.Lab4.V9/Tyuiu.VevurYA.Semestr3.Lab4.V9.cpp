@@ -28,6 +28,7 @@ public:
 	char* Run();
 	void Set(char*);
 	void Fout();
+	int CharCount();
 
 	friend void print(String&);
 	friend ostream& operator << (ostream&, String&);
@@ -89,7 +90,10 @@ void String::Fout()
 	fout.close();
 }
 
-
+int String::CharCount()
+{
+	return strlen(str);
+}
 
 char* String::Run()
 {
@@ -128,6 +132,7 @@ char* String::Run()
 char* Run(String& obj) { return obj.Run(); }
 void print(String& obj) { cout << obj.str << " " << obj.str_return << endl; }
 void Fout(String& obj) { return obj.Fout(); }
+int CharCount(String& obj) { return obj.CharCount(); }
 
 
 ostream& operator << (ostream& stream, String& ob)
@@ -170,6 +175,7 @@ int main()
 		String str(s);
 		cout << "Вы ввели: " << endl;
 		print(str);
+		cout << "Количество символов в строке : " << CharCount(str) << " - " << ((CharCount(str) % 5 == 0) ? "кратно" : "не кратно") << " пяти." << endl;
 		cout << "Выходная строка: " << endl;
 		cout << Run(str) << endl;
 		Fout(str);

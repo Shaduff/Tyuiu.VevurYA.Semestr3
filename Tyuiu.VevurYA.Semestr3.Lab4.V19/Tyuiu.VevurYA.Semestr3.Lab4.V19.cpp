@@ -19,7 +19,6 @@ class String
 {
 	char* str;
 	char* str_return;
-	int ch_count;
 
 public:
 	String();
@@ -114,10 +113,11 @@ char* String::Run()
 				j++;
 			}
 			if (str[i] == ' ') { flag = true; }
-
 		}
+		str_return[j] = '\0';
 	}
-	str_return[j] = '\0';
+	else strcpy(str_return, str);
+	
 	return str_return;
 }
 
