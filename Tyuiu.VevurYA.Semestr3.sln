@@ -23,6 +23,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lab4", "Lab4", "{642ECAF3-2
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tyuiu.VevurYA.Semestr3.Lab4.V9", "Tyuiu.VevurYA.Semestr3.Lab4.V9\Tyuiu.VevurYA.Semestr3.Lab4.V9.vcxproj", "{5C0BD776-6492-44BE-817F-36E7345E644D}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tyuiu.VevurYA.Semestr3.Lab4.V19", "Tyuiu.VevurYA.Semestr3.Lab4.V19\Tyuiu.VevurYA.Semestr3.Lab4.V19.vcxproj", "{9B5E582C-8468-4959-B50B-F80EA4B034F0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -79,6 +81,14 @@ Global
 		{5C0BD776-6492-44BE-817F-36E7345E644D}.Release|x64.Build.0 = Release|x64
 		{5C0BD776-6492-44BE-817F-36E7345E644D}.Release|x86.ActiveCfg = Release|Win32
 		{5C0BD776-6492-44BE-817F-36E7345E644D}.Release|x86.Build.0 = Release|Win32
+		{9B5E582C-8468-4959-B50B-F80EA4B034F0}.Debug|x64.ActiveCfg = Debug|x64
+		{9B5E582C-8468-4959-B50B-F80EA4B034F0}.Debug|x64.Build.0 = Debug|x64
+		{9B5E582C-8468-4959-B50B-F80EA4B034F0}.Debug|x86.ActiveCfg = Debug|Win32
+		{9B5E582C-8468-4959-B50B-F80EA4B034F0}.Debug|x86.Build.0 = Debug|Win32
+		{9B5E582C-8468-4959-B50B-F80EA4B034F0}.Release|x64.ActiveCfg = Release|x64
+		{9B5E582C-8468-4959-B50B-F80EA4B034F0}.Release|x64.Build.0 = Release|x64
+		{9B5E582C-8468-4959-B50B-F80EA4B034F0}.Release|x86.ActiveCfg = Release|Win32
+		{9B5E582C-8468-4959-B50B-F80EA4B034F0}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -90,6 +100,7 @@ Global
 		{4AE9BC43-8098-43E1-9D77-8985A01D23AD} = {DD9A7CFA-68FA-4ECE-9100-DE83A9C5EA3B}
 		{614611C1-8D46-48F4-A4F6-92EEF4D4E5A5} = {DD9A7CFA-68FA-4ECE-9100-DE83A9C5EA3B}
 		{5C0BD776-6492-44BE-817F-36E7345E644D} = {642ECAF3-245E-48F5-B8C0-3F8B6516D169}
+		{9B5E582C-8468-4959-B50B-F80EA4B034F0} = {642ECAF3-245E-48F5-B8C0-3F8B6516D169}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2D86EAA6-6C28-4384-B745-DBBF18904461}
