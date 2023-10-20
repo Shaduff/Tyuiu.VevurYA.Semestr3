@@ -99,7 +99,6 @@ char* String::Run()
 {
 	int j = 0;
 	int countS1 =0, countS2 = 0, countS3 = 0;
-	//cout << str << endl;
 	if (strlen(str) % 5 == 0)
 	{
 		for (unsigned int i = 0; i < strlen(str); i++)
@@ -109,22 +108,9 @@ char* String::Run()
 			if (str[i] == '(' || str[i] == ')') { countS3++; }
 		}
 	}
-	//str_return = "круглых скобок" + char(countS3);
-	
-	
-	/*
-	fstream fout("Output.txt", ios::out);
-	if (!fout)
-		cout << endl << "ERROR: MISSING O/P FILE" << endl;
-	else
-		fout << "Сумма всех скобок: " << countS1 + countS2 + countS3 << ". Фигурных: " << countS1 << "; Квадратных: " << countS2 << "; Круглых: " << countS3 << endl;
-	fout.close();
-	*/
 
 	const string temp = "Всего скобок в строке: " + to_string(countS1 + countS2 + countS3) + ". Круглых: " + to_string(countS3) + "; Квадратных: " + to_string(countS2) + "; Фигурных: " + to_string(countS1) + ".";
-	char* str_temp = const_cast<char*>(temp.c_str());
-	strcpy(str_return, str_temp);
-	//cout << endl << str_return << endl << countS1 << countS2 << countS3;
+	strcpy(str_return, const_cast<char*>(temp.c_str()));
 	return str_return;
 }
 
