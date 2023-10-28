@@ -12,8 +12,10 @@ protected:
     int* x2;
 
 public :
+    // Конструкторы
     X();
     X(int _x1, int _x2);
+    // Деструктор
     ~X();
     virtual void print();
     virtual void set();
@@ -39,22 +41,27 @@ public:
 
 X::X()
 {
+    cout << "Создание объекта базового класса...\n";
     x1 = new int;
     x2 = new int;
+    cout << "Объект создан.\n";
 }
 
 X::X(int _x1, int _x2)
 {
+    cout << "Создание объекта базового класса...\n";
     x1 = new int;
     *x1 = _x1;
     x2 = new int;
     *x2 = _x2;
+    cout << "Объект создан.\n";
 }
 
 X::~X()
 {
     delete x1;
     delete x2;
+    cout << "Объект базового класса удалён.\n";
 }
 
 void X::print()
@@ -70,21 +77,26 @@ void X::set()
 }
 
 
-Y::Y()
+Y::Y() :X()
 {
+    cout << "Создание объекта производного класса...\n";
     y = new int;
+    cout << "Объект создан\n";
 }
 
-Y::Y(int _x1, int _x2, int _y)
+Y::Y(int _x1, int _x2, int _y):X(_x1, _x2)
 {
+    cout << "Создание объекта производного класса...\n";
     y = new int;
     *y = _y;
+    cout << "Объект создан\n";
 }
 
 
 Y::~Y()
 {
     delete y;
+    cout << "Объект производного класса удалён.\n";
 }
 
 void Y::print()
@@ -119,25 +131,22 @@ void Y::Run_V2_10()
 int main()
 {
     setlocale(0, "");
-    cout << "Создание объекта базового класса...\n";
+    // Работа с базовым классом
     X* t;
-    cout << "Объект создан.\n";
     t = new X();
     t->set();
     t->print();
-    cout << "Объект удалён.\n";
     delete t;
 
-    cout << "Создание объекта производного класса...\n";
+    // Работа с производным классом
     t = new Y();
-    cout << "Объект создан\n";
     t->set();
     t->print();
     cout << "Вариант 2:\n";
     ((Y*)t)->Run_V2_2();
     ((Y*)t)->Run_V2_9();
     ((Y*)t)->Run_V2_10();
-    
+    delete t;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
