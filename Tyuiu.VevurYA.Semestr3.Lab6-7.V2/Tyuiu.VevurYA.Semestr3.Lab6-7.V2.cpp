@@ -7,6 +7,8 @@ using namespace std;
 
 // всё что дальше - моя шиза.
 
+
+// Базовый класс "Двигатель"
 class Engine
 {
 protected:
@@ -35,6 +37,7 @@ public:
 	virtual void print() = 0;
 };
 
+// Базовый класс "Кузов"
 class Chasis
 {
 protected:
@@ -169,19 +172,26 @@ int main()
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
 	setlocale(0, "");
-	Transport* transport = new Transport;
-	cin >> *transport;
-	cout << *transport;
-	//transport->print();
-	ofstream fout("output.txt", ios::out);
-	if (!fout) {
-		cout << "ERROR" << endl;
+	try {
+		Transport* transport = new Transport;
+		cin >> *transport;
+		cout << "Информация о введенном транспорте: " << endl;
+		cout << *transport;
+		//transport->print();
+		ofstream fout("output.txt", ios::out);
+		if (!fout) {
+			throw runtime_error("Ошибка открытия файла.");
+		}
+		else
+		{
+			fout << *transport;
+		}
+		cout << "Макимальное расстояние без дозаправок: " << transport->Run();
 	}
-	else
+	catch (const exception& e)
 	{
-		fout << *transport;
+		cerr << "ОШИБКА" << e.what() << endl;
 	}
-	cout << "Run: " << transport->Run();
 }
 
 
