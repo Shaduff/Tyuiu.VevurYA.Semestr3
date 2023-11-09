@@ -100,13 +100,13 @@ public:
 
 	virtual void print() override
 	{
-		cout << *name << endl;
-		cout << *type<< endl;
-		cout << *year << endl;
-		cout << *maxSpeed << endl;
-		cout << *engineVolume << endl;
-		cout << *fuelConsumption << endl;
-		cout << *fuelCapacity << endl;
+		cout << "Наименование: " << *name << endl;
+		cout << "Тип кузова: " << *type << endl;
+		cout << "Год:" << *year << endl;
+		cout << "Макс. скорость: " << *maxSpeed << " км/ч." << endl;
+		cout << "Объем двигателя: " << *engineVolume << " л." << endl;
+		cout << "Расход топлива: " << *fuelConsumption << " л/км." << endl;
+		cout << "Объем бензобака: " << *fuelCapacity << " л." << endl;
 	}
 
 	double Run()
@@ -145,10 +145,10 @@ ostream& operator<<(ostream& out, Transport& transport)
 	out << "Наименование: " << * transport.name << endl;
 	out << "Тип кузова: " << * transport.type << endl;
 	out << "Год:" << * transport.year << endl;
-	out << "Макс. скорость: " << *transport.maxSpeed << endl;
-	out << "Объем двигателя: " << * transport.engineVolume << endl;
-	out << "Расход топлива: " << * transport.fuelConsumption << endl;
-	out << "Объем бензобака: " << * transport.fuelCapacity << endl;
+	out << "Макс. скорость: " << *transport.maxSpeed << " км/ч." << endl;
+	out << "Объем двигателя: " << * transport.engineVolume << " л." << endl;
+	out << "Расход топлива: " << * transport.fuelConsumption << " л/км." << endl;
+	out << "Объем бензобака: " << * transport.fuelCapacity << " л." << endl;
 	return out;
 }
 
@@ -157,10 +157,10 @@ ofstream& operator<<(ofstream& fout, Transport& transport)
 	fout << "Наименование: \t" << *transport.name << endl;
 	fout << "Тип кузова: \t" << *transport.type << endl;
 	fout << "Год выпуска: \t" << *transport.year << endl;
-	fout << "Макс. скорость: \t" << *transport.maxSpeed << endl;
-	fout << "Объем двигателя: \t" << *transport.engineVolume << endl;
-	fout << "Расход топлива: \t" << *transport.fuelConsumption << endl;
-	fout << "Объем бензобака: \t" << *transport.fuelCapacity << endl;
+	fout << "Макс. скорость: " << *transport.maxSpeed << " км/ч." << endl;
+	fout << "Объем двигателя: " << *transport.engineVolume << " л." << endl;
+	fout << "Расход топлива: " << *transport.fuelConsumption << " л/км." << endl;
+	fout << "Объем бензобака: " << *transport.fuelCapacity << " л." << endl;
 	
 	return fout;
 }
@@ -177,7 +177,7 @@ int main()
 		cin >> *transport;
 		cout << "Информация о введенном транспорте: " << endl;
 		cout << *transport;
-		//transport->print();
+		//cout << "Print method:\n"; transport->print();
 		ofstream fout("output.txt", ios::out);
 		if (!fout) {
 			throw runtime_error("Ошибка открытия файла.");
@@ -186,168 +186,10 @@ int main()
 		{
 			fout << *transport;
 		}
-		cout << "Макимальное расстояние без дозаправок: " << transport->Run();
+		cout << "Макимальное расстояние без дозаправок: " << transport->Run() << endl;
 	}
 	catch (const exception& e)
 	{
 		cerr << "ОШИБКА" << e.what() << endl;
 	}
 }
-
-
-
-
-
-
-
-
-// это шиза уже из gpt
-
-//class Transport;
-//
-//istream& operator>>(istream& in, Transport& transport);
-//ostream& operator<<(ostream& out, const Transport& transport);
-//fstream& operator<<(fstream& file, const Transport& transport);
-//
-//class Engine {
-//protected:
-//    double engineVolume;
-//    double fuelConsumption;
-//
-//public:
-//    Engine() : engineVolume(0.0), fuelConsumption(0.0) {}
-//    Engine(double _engineVolume, double _fuelConsumption)
-//        : engineVolume(_engineVolume), fuelConsumption(_fuelConsumption) {}
-//
-//    virtual ~Engine() {}
-//
-//    virtual void print() = 0;
-//    friend istream& operator>>(istream& in, Engine& engine);
-//    friend ostream& operator<<(ostream& out, const Engine& engine);
-//};
-//
-//class Chasis {
-//protected:
-//    string name;
-//    string type;
-//    int year;
-//    double fuelCapacity;
-//
-//public:
-//    Chasis() : name(""), type(""), year(0), fuelCapacity(0.0) {}
-//
-//    Chasis(const std::string& _name, const std::string& _type, int _year, double _fuelCapacity)
-//        : name(_name), type(_type), year(_year), fuelCapacity(_fuelCapacity) {}
-//
-//    virtual ~Chasis() {}
-//
-//    virtual void print() = 0;
-//    friend istream& operator>>(istream& in, Chasis& chasis);
-//    friend ostream& operator<<(ostream& out, const Chasis& chasis);
-//};
-//
-//class Transport : protected Engine, protected Chasis {
-//public:
-//    Transport() : Engine(), Chasis() {}
-//
-//    Transport(const std::string& _name, const std::string& _type, int _year, double _engineVolume, double _fuelConsumption, double _fuelCapacity)
-//        : Engine(_engineVolume, _fuelConsumption), Chasis(_name, _type, _year, _fuelCapacity) {}
-//
-//    virtual void print() override {
-//        cout << "Наименование: " << name << endl;
-//        cout << "Тип: " << type << endl;
-//        cout << "Год выпуска: " << year << std::endl;
-//        cout << "Объем двигателя: " << engineVolume << " л" << endl;
-//        cout << "Расход топлива: " << fuelConsumption << " л/100 км" << endl;
-//        cout << "Объем бензобака: " << fuelCapacity << " л" << endl;
-//    }
-//
-//    double Run() const{
-//        return fuelCapacity / (fuelConsumption / 100.0); // Расстояние без подзаправок в км
-//    }
-//
-//    friend istream& operator>>(istream& in, Transport& transport);
-//    friend ostream& operator<<(ostream& out, const Transport& transport);
-//    friend fstream& operator<<(fstream& file, const Transport& transport);
-//};
-//
-//istream& operator>>(istream& in, Engine& engine) {
-//    in >> engine.engineVolume >> engine.fuelConsumption;
-//    return in;
-//}
-//
-//ostream& operator<<(ostream& out, const Engine& engine) {
-//    out << "Объем двигателя: " << engine.engineVolume << " л" << endl;
-//    out << "Расход топлива: " << engine.fuelConsumption << " л/100 км" << endl;
-//    return out;
-//}
-//
-//istream& operator>>(istream& in, Chasis& chasis) {
-//    in >> chasis.name >> chasis.type >> chasis.year >> chasis.fuelCapacity;
-//    return in;
-//}
-//
-//ostream& operator<<(ostream& out, const Chasis& chasis) {
-//    out << "Наименование: " << chasis.name << endl;
-//    out << "Тип: " << chasis.type << endl;
-//    out << "Год выпуска: " << chasis.year << endl;
-//    out << "Объем бензобака: " << chasis.fuelCapacity << " л" << endl;
-//    return out;
-//}
-//
-//istream& operator>>(istream& in, Transport& transport) {
-//    in >> static_cast<Engine&>(transport) >> static_cast<Chasis&>(transport);
-//    return in;
-//}
-//
-//ostream& operator<<(ostream& out, const Transport& transport) {
-//    static_cast<const Engine&>(transport);
-//    static_cast<const Chasis&>(transport);
-//    out << "Расстояние без подзаправок: " << transport.Run() << " км" << endl;
-//    return out;
-//}
-//
-//fstream& operator<<(fstream& file, const Transport& transport) {
-//    static_cast<const Engine&>(transport);
-//    static_cast<const Chasis&>(transport);
-//    file << "Расстояние без подзаправок: " << transport.Run() << " км" << endl;
-//    return file;
-//}
-//
-//
-//int main() {
-//    SetConsoleCP(1251);
-//    SetConsoleOutputCP(1251);
-//    setlocale(0, "");
-//    try {
-//        Transport* ae86 = new Transport;
-//
-//        cout << "Введите информацию о транспорте:" << endl;
-//        cin >> *ae86;
-//
-//        ofstream outFile("transport_info.txt");
-//        if (!outFile.is_open()) {
-//            throw runtime_error("Не удалось открыть файл для записи.");
-//        }
-//
-//        cout << "Информация о транспорте:" << endl;
-//        cout << *ae86;
-//
-//        outFile << "Информация о транспорте:" << endl;
-//        outFile << *ae86;
-//
-//        cout << "Расстояние без подзаправок: " << ae86->Run() << " км" << endl;
-//
-//        outFile << "Расстояние без подзаправок: " << ae86->Run() << " км" << endl;
-//
-//        outFile.close();
-//        cout << "Информация сохранена в файле 'transport_info.txt'." << endl;
-//
-//        delete ae86; // Освобождаем выделенную память
-//    }
-//    catch (const exception& e) {
-//        cerr << "Ошибка: " << e.what() << endl;
-//    }
-//
-//    return 0;
-//}
