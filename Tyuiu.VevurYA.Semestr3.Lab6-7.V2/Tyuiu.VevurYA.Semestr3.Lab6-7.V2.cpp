@@ -41,9 +41,9 @@ public:
 class Chasis
 {
 protected:
-	string* name;
-	string* type;
-	int* year;
+	string* name;	// Наименование
+	string* type;	// Тип
+	int* year;		// Год выпуска
 	double* fuelCapacity;
 public:
 	Chasis()
