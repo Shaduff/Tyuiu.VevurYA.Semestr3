@@ -149,18 +149,20 @@ ostream& operator<<(ostream& out, Transport& transport)
 	out << "Объем двигателя: " << * transport.engineVolume << " л." << endl;
 	out << "Расход топлива: " << * transport.fuelConsumption << " л/км." << endl;
 	out << "Объем бензобака: " << * transport.fuelCapacity << " л." << endl;
+	out << "Макимальное расстояние без дозаправок: " << transport.Run() << " км." << endl;
 	return out;
 }
 
 ofstream& operator<<(ofstream& fout, Transport& transport)
 {
-	fout << "Наименование: \t" << *transport.name << endl;
-	fout << "Тип кузова: \t" << *transport.type << endl;
-	fout << "Год выпуска: \t" << *transport.year << endl;
+	fout << "Наименование: " << *transport.name << endl;
+	fout << "Тип кузова: " << *transport.type << endl;
+	fout << "Год выпуска: " << *transport.year << endl;
 	fout << "Макс. скорость: " << *transport.maxSpeed << " км/ч." << endl;
 	fout << "Объем двигателя: " << *transport.engineVolume << " л." << endl;
 	fout << "Расход топлива: " << *transport.fuelConsumption << " л/км." << endl;
 	fout << "Объем бензобака: " << *transport.fuelCapacity << " л." << endl;
+	fout << "Макимальное расстояние без дозаправок: " << transport.Run()  << " км." << endl;
 	
 	return fout;
 }
@@ -175,7 +177,7 @@ int main()
 	try {
 		Transport* transport = new Transport;
 		cin >> *transport;
-		cout << "Информация о введенном транспорте: " << endl;
+		cout << endl << "Информация о введенном транспорте: " << endl;
 		cout << *transport;
 		//cout << "Print method:\n"; transport->print();
 		ofstream fout("output.txt", ios::out);
@@ -186,7 +188,6 @@ int main()
 		{
 			fout << *transport;
 		}
-		cout << "Макимальное расстояние без дозаправок: " << transport->Run() << endl;
 	}
 	catch (const exception& e)
 	{

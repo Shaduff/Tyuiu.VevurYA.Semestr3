@@ -112,17 +112,17 @@ public:
 
     friend istream& operator>> (istream& in, Phone& phone)
     {
-        cout << "Введите наименование: "; 
+        cout << "Введите наименование: ";
         in >> *phone.name;
-        cout << "Введите фирму: "; 
+        cout << "Введите фирму: ";
         in >> *phone.brand;
-        cout << "Введите стандарт связи: "; 
+        cout << "Введите стандарт связи: ";
         in >> *phone.comstandart;
-        cout << "Введите объем аккумулятора: "; 
+        cout << "Введите объем аккумулятора: ";
         in >> *phone.batcap;
-        cout << "Введите потребление при ожидании: "; 
+        cout << "Введите потребление при ожидании: ";
         in >> *phone.standbyconsumption;
-        cout << "Введите потребление при разговоре: "; 
+        cout << "Введите потребление при разговоре: ";
         in >> *phone.onlineconsumption;
         return in;
     }

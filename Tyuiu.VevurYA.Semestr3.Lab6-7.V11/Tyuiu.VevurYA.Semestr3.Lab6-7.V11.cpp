@@ -130,25 +130,27 @@ istream& operator>>(istream& in, Hardware& hardware)
 
 ostream& operator<<(ostream& out, Hardware& hardware)
 {
-    out << "Наименование:\t" << *hardware.name << endl;
-    out << "Тип:\t" << *hardware.type << endl;
-    out << "Модель:\t" << *hardware.model << endl;
-    out << "Частота:\t" << *hardware.frequency << " GHz" << endl;
-    out << "Объем памяти:\t" << *hardware.memorySize << " Gb" << endl;
-    out << "Цена:\t" << *hardware.price << " руб." << endl;
-    out << "Количество:\t" << *hardware.quantity << " ед." << endl;
+    out << "Наименование: " << *hardware.name << endl;
+    out << "Тип: " << *hardware.type << endl;
+    out << "Модель: " << *hardware.model << endl;
+    out << "Частота: " << *hardware.frequency << " GHz." << endl;
+    out << "Объем памяти: " << *hardware.memorySize << " Gb." << endl;
+    out << "Цена: " << *hardware.price << " руб." << endl;
+    out << "Количество: " << *hardware.quantity << " ед." << endl;
+    out << "Стоимость коплектующих: " << hardware.Run() << " руб." << endl;
     return out;
 }
 
 ofstream& operator<<(ofstream& fout, Hardware& hardware)
 {
-    fout << "Наименование:\t" << *hardware.name << endl;
-    fout << "Тип:\t" << *hardware.type << endl;
-    fout << "Модель:\t" << *hardware.model << endl;
-    fout << "Частота:\t" << *hardware.frequency << " GHz" << endl;
-    fout << "Объем памяти:\t" << *hardware.memorySize << " Gb" << endl;
-    fout << "Цена:\t" << *hardware.price << " руб." << endl;
-    fout << "Количество:\t" << *hardware.quantity << " ед." << endl;
+    fout << "Наименование: " << *hardware.name << endl;
+    fout << "Тип: " << *hardware.type << endl;
+    fout << "Модель: " << *hardware.model << endl;
+    fout << "Частота: " << *hardware.frequency << " GHz." << endl;
+    fout << "Объем памяти: " << *hardware.memorySize << " Gb." << endl;
+    fout << "Цена: " << *hardware.price << " руб." << endl;
+    fout << "Количество: " << *hardware.quantity << " ед." << endl;
+    fout << "Стоимость коплектующих: " << hardware.Run() << " руб." << endl;
     return fout;
 }
 
@@ -165,7 +167,8 @@ int main()
     {
         Hardware* hardware = new Hardware;
         cin >> *hardware;
-        cout << *hardware;
+        cout << "Информация о введенных комплекующих:\n";
+        cout << endl << *hardware;
         //cout << "Print method:\n"; hardware->print();
         fstream fout("output.txt", ios::out);
         if (!fout)
@@ -176,9 +179,6 @@ int main()
         {
             fout << *hardware;
         }
-        cout << "Стоимость коплектующих: " << hardware->Run() << endl;
-
-
     }
     catch(const exception & e)
     {
