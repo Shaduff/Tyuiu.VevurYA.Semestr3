@@ -1,11 +1,11 @@
-// Tyuiu.VevurYA.Semestr3.Lab10.V2.cpp : This file contains the 'main' function. Program execution begins and ends there.
+п»ї// Tyuiu.VevurYA.Semestr3.Lab10.V4.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
 #include <iostream>
-#include <string>
-#include <map>
-#include <sstream>
+#include <vector>
 #include <Windows.h>
+#include <string>
+#include <sstream>
 #include <algorithm>
 
 using namespace std;
@@ -15,31 +15,42 @@ int main() {
     SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
 
-    cout << "Введите текст (или набор слов):\n";
+    cout << "Р’РІРµРґРёС‚Рµ С‚РµРєСЃС‚ (РёР»Рё РЅР°Р±РѕСЂ СЃР»РѕРІ):\n";
     string text;
     getline(cin, text);
 
-    // убираем из текста все знаки препинания
     for (int i = 0; i < text.size(); i++) {
         if (!isalpha((unsigned char)text[i]) && text[i] != ' ') {
             text.erase(i--, 1);
         }
     }
-
-    // преобразовывем все буквы в нижний регистр
     transform(text.begin(), text.end(), text.begin(), ::tolower);
 
-    stringstream ss(text); // поток строк который будет считывать строку text 
-    map<string, int> wordCounts; // словарь слов. жаль что об этой структуре не рассказывают на парах. сколько бы она спасла мне времени и нервов...
+    vector<string> strings;
+    stringstream ss(text);
     string word;
+    int i = 0;
+    while (ss >> word)
+    {
+        strings.push_back(word);;
+        i++;
+    }
+    cout << "\nР’РІРµРґРёС‚Рµ СЃРёРјРІРѕР»: ";
+    char letter;
+    cin >> letter;
 
-    while (ss >> word) { // читаем каждое слово из потока, заносим в словарь.
-        wordCounts[word]++;
-    }
-    cout << "Список введенных слов:\n";
-    for (const auto& pair : wordCounts) {
-        cout << pair.first << ": " << pair.second << endl;
-    }
+    int count = [](const vector<string>& vec, char letter) {
+        int counter = 0;
+        for (const string& str : vec) {
+            if (str.front() == letter) {
+                counter++;
+            }
+        }
+        return counter;
+    }(strings, letter);
+
+    cout << "РљРѕР»РёС‡РµСЃС‚РІРѕ СЃР»РѕРІ РЅР°С‡РёРЅР°СЋС‰РёС…СЃСЏ СЃ Р±СѓРєРІС‹ '" << letter << "': " << count << endl;
+
     return 0;
 }
 
