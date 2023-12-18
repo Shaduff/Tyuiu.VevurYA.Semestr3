@@ -73,6 +73,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tyuiu.VevurYA.Semestr3.Lab10.V4", "Tyuiu.VevurYA.Semestr3.Lab10.V4\Tyuiu.VevurYA.Semestr3.Lab10.V4.vcxproj", "{1F87CB76-3328-4926-ACD5-1F8606754CE1}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Final", "Final", "{924362D5-7A68-40FE-BB88-3821A3CEC535}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tyuiu.VevurYA.Semestr3.Final", "Tyuiu.VevurYA.Semestr3.Final\Tyuiu.VevurYA.Semestr3.Final.vcxproj", "{F7A28D88-30ED-4526-A27A-75AE07142CC7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -281,6 +285,14 @@ Global
 		{1F87CB76-3328-4926-ACD5-1F8606754CE1}.Release|x64.Build.0 = Release|x64
 		{1F87CB76-3328-4926-ACD5-1F8606754CE1}.Release|x86.ActiveCfg = Release|Win32
 		{1F87CB76-3328-4926-ACD5-1F8606754CE1}.Release|x86.Build.0 = Release|Win32
+		{F7A28D88-30ED-4526-A27A-75AE07142CC7}.Debug|x64.ActiveCfg = Debug|x64
+		{F7A28D88-30ED-4526-A27A-75AE07142CC7}.Debug|x64.Build.0 = Debug|x64
+		{F7A28D88-30ED-4526-A27A-75AE07142CC7}.Debug|x86.ActiveCfg = Debug|Win32
+		{F7A28D88-30ED-4526-A27A-75AE07142CC7}.Debug|x86.Build.0 = Debug|Win32
+		{F7A28D88-30ED-4526-A27A-75AE07142CC7}.Release|x64.ActiveCfg = Release|x64
+		{F7A28D88-30ED-4526-A27A-75AE07142CC7}.Release|x64.Build.0 = Release|x64
+		{F7A28D88-30ED-4526-A27A-75AE07142CC7}.Release|x86.ActiveCfg = Release|Win32
+		{F7A28D88-30ED-4526-A27A-75AE07142CC7}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -312,6 +324,7 @@ Global
 		{92395B97-CB11-4FBF-A9E7-4A959073101C} = {23B8210D-C87F-457F-A17F-57FE7ACAA02C}
 		{08DC5765-769F-4962-9257-11ED4EB3F015} = {23B8210D-C87F-457F-A17F-57FE7ACAA02C}
 		{1F87CB76-3328-4926-ACD5-1F8606754CE1} = {23B8210D-C87F-457F-A17F-57FE7ACAA02C}
+		{F7A28D88-30ED-4526-A27A-75AE07142CC7} = {924362D5-7A68-40FE-BB88-3821A3CEC535}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2D86EAA6-6C28-4384-B745-DBBF18904461}
